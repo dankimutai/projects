@@ -29,3 +29,26 @@ document.addEventListener('keydown', function (e) {
     closeModal();
   }
 });
+
+// console.log(document.documentElement);
+// const allselection = document.querySelectorAll('section');
+// console.log(allselection);
+
+// const header = document.querySelector('.header');
+
+// const message = document.createElement('div')
+// message.innerHTML="API stands for application programming interface"
+// message.classList.add('cookie-message');
+// header.prepend(message);
+const navlinks = document.querySelectorAll('.nav__link');
+
+navlinks.forEach(e => {
+  e.addEventListener('click', function (nav) {
+    nav.preventDefault();
+    const attribute = nav.target.getAttribute('href');
+
+    const section = document.querySelector(attribute);
+    console.log(attribute);
+    section.scrollIntoView({ behavior: 'smooth' });
+  });
+});
