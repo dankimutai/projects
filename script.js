@@ -53,10 +53,27 @@ navlinks.forEach(e => {
   });
 });
 
-const randNum = (min, max) =>Math.floor(Math.random() * (max - min + 1) + min);
+const randNum = (min, max) => Math.floor(Math.random() * (max - min + 1) + min);
 randNum(1, 255);
 const randColor = `rgb(${randNum(1, 255)},${randNum(1, 255)},${randNum(
   1,
   255
 )})`;
 console.log(randColor);
+
+const tabs = document.querySelectorAll('.operations__tab');
+const operation = document.querySelector('.operations__tab-container');
+const opeContent = document.querySelectorAll('.operations__content ');
+operation.addEventListener('click', function (e) {
+  const target = e.target.closest('.operations__tab');
+  if (!target) return;
+
+  opeContent.forEach(c => c.classList.remove('operations__content--active'));
+  tabs.forEach(c => c.classList.remove('operations__tab--active'));
+  target.classList.add('operations__tab--active');
+  const tag = target.dataset.tab;
+  
+  document
+    .querySelector(`.operations__content--${tag}`)
+    .classList.add('operations__content--active');
+});
