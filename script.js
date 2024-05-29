@@ -52,3 +52,11 @@ navlinks.forEach(e => {
     section.scrollIntoView({ behavior: 'smooth' });
   });
 });
+
+const randNum = (min, max) =>Math.floor(Math.random() * (max - min + 1) + min);
+randNum(1, 255);
+const randColor = `rgb(${randNum(1, 255)},${randNum(1, 255)},${randNum(
+  1,
+  255
+)})`;
+console.log(randColor);
