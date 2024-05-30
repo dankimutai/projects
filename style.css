@@ -298,7 +298,7 @@ h4 {
 }
 
 .operations__tab--1:hover {
-  background-color: var(--color-secondary-darker);
+  background-color: var(--color-secondary-light);
 }
 
 .operations__tab--3 {
