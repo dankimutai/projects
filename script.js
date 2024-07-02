@@ -46,10 +46,9 @@ navlinks.forEach(e => {
   e.addEventListener('click', function (nav) {
     nav.preventDefault();
     const attribute = nav.target.getAttribute('href');
-
-    const section = document.querySelector(attribute);
-    console.log(attribute);
-    section.scrollIntoView({ behavior: 'smooth' });
+    const idd = document.querySelector(attribute);
+    console.log(idd);
+    idd.scrollIntoView({ behavior: 'smooth' });
   });
 });
 
@@ -72,7 +71,7 @@ operation.addEventListener('click', function (e) {
   tabs.forEach(c => c.classList.remove('operations__tab--active'));
   target.classList.add('operations__tab--active');
   const tag = target.dataset.tab;
-  
+
   document
     .querySelector(`.operations__content--${tag}`)
     .classList.add('operations__content--active');
