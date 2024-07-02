@@ -76,3 +76,33 @@ operation.addEventListener('click', function (e) {
     .querySelector(`.operations__content--${tag}`)
     .classList.add('operations__content--active');
 });
+
+const slides = document.querySelectorAll('.slide');
+slides.forEach((s, i) => (s.style.transform = `translateX(${100 * i}%)`));
+
+let curslide = 0;
+const maxslide = slides.length - 1; // maxslide should be length - 1 for zero-based index
+const btnLeft = document.querySelector('.slider__btn--left');
+const btnRight = document.querySelector('.slider__btn--right');
+
+btnLeft.addEventListener('click', function () {
+  if (curslide === 0) {
+    curslide = maxslide;
+  } else {
+    curslide--;
+  }
+  slides.forEach(
+    (s, i) => (s.style.transform = `translateX(${100 * (i - curslide)}%)`)
+  );
+});
+
+btnRight.addEventListener('click', function () {
+  if (curslide === maxslide) {
+    curslide = 0;
+  } else {
+    curslide++;
+  }
+  slides.forEach(
+    (s, i) => (s.style.transform = `translateX(${100 * (i - curslide)}%)`)
+  );
+});
