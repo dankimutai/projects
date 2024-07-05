@@ -90,7 +90,7 @@ btnLeft.addEventListener('click', function () {
     curslide = maxslide;
   } else {
     curslide--;
-  }
+  } 
   slides.forEach(
     (s, i) => (s.style.transform = `translateX(${100 * (i - curslide)}%)`)
   );
@@ -106,3 +106,4 @@ btnRight.addEventListener('click', function () {
     (s, i) => (s.style.transform = `translateX(${100 * (i - curslide)}%)`)
   );
 });
+console.log
