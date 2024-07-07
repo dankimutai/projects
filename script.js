@@ -30,16 +30,7 @@ document.addEventListener('keydown', function (e) {
   }
 });
 
-// console.log(document.documentElement);
-// const allselection = document.querySelectorAll('section');
-// console.log(allselection);
 
-// const header = document.querySelector('.header');
-
-// const message = document.createElement('div')
-// message.innerHTML="API stands for application programming interface"
-// message.classList.add('cookie-message');
-// header.prepend(message);
 const navlinks = document.querySelectorAll('.nav__link');
 
 navlinks.forEach(e => {
@@ -47,7 +38,7 @@ navlinks.forEach(e => {
     nav.preventDefault();
     const attribute = nav.target.getAttribute('href');
     const idd = document.querySelector(attribute);
-    console.log(idd);
+    
     idd.scrollIntoView({ behavior: 'smooth' });
   });
 });
