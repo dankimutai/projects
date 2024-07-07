@@ -58,7 +58,7 @@ const randColor = `rgb(${randNum(1, 255)},${randNum(1, 255)},${randNum(
   1,
   255
 )})`;
-console.log(randColor);
+
 
 const tabs = document.querySelectorAll('.operations__tab');
 const operation = document.querySelector('.operations__tab-container');
@@ -106,4 +106,4 @@ btnRight.addEventListener('click', function () {
     (s, i) => (s.style.transform = `translateX(${100 * (i - curslide)}%)`)
   );
 });
-console.log("print hell0")
+
