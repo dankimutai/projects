@@ -106,4 +106,4 @@ btnRight.addEventListener('click', function () {
     (s, i) => (s.style.transform = `translateX(${100 * (i - curslide)}%)`)
   );
 });
-console.log
+console.log("print hell0")
