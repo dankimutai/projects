@@ -1,6 +1,5 @@
 'use strict';
 
-
 const modal = document.querySelector('.modal');
 const overlay = document.querySelector('.overlay');
 const btnCloseModal = document.querySelector('.btn--close-modal');
@@ -28,7 +27,6 @@ document.addEventListener('keydown', function (e) {
   }
 });
 
-
 const navlinks = document.querySelectorAll('.nav__link');
 
 navlinks.forEach(e => {
@@ -36,7 +34,7 @@ navlinks.forEach(e => {
     nav.preventDefault();
     const attribute = nav.target.getAttribute('href');
     const idd = document.querySelector(attribute);
-    
+
     idd.scrollIntoView({ behavior: 'smooth' });
   });
 });
@@ -47,7 +45,6 @@ const randColor = `rgb(${randNum(1, 255)},${randNum(1, 255)},${randNum(
   1,
   255
 )})`;
-
 
 const tabs = document.querySelectorAll('.operations__tab');
 const operation = document.querySelector('.operations__tab-container');
@@ -79,7 +76,7 @@ btnLeft.addEventListener('click', function () {
     curslide = maxslide;
   } else {
     curslide--;
-  } 
+  }
   slides.forEach(
     (s, i) => (s.style.transform = `translateX(${100 * (i - curslide)}%)`)
   );
@@ -96,3 +93,12 @@ btnRight.addEventListener('click', function () {
   );
 });
 
+// asyncronous javascript
+
+const request = new XMLHttpRequest();
+
+request.open('GET', 'https://restcountries.eu/rest/v2/name/kenya');
+request.send();
+request.addEventListener('load', function () {
+  console.log(this.responseText)
+})
