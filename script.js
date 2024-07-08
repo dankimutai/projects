@@ -95,10 +95,10 @@ btnRight.addEventListener('click', function () {
 
 // asyncronous javascript
 
-const request = new XMLHttpRequest();
-
-request.open('GET', 'https://restcountries.eu/rest/v2/name/kenya');
+var request = new XMLHttpRequest();
+request.open('GET', 'https://restcountries.com/v3.1/name/kenya');
 request.send();
 request.addEventListener('load', function () {
-  console.log(this.responseText)
-})
+  console.log(this.responseText);
+  
+});
